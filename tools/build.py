@@ -261,18 +261,80 @@ privacy = head("Privacy Policy - Andrew Tech Solutions", "Privacy policies for a
 ''' + FOOT
 write("privacy/index.html", privacy)
 
-# ---------------- per-app privacy (wrap existing embeds) ----------------
-chess_embed = open(os.path.join(SRC, "game_chess/docs/privacy-policy-embed-en.html")).read()
-chess_embed = re.sub(r"^.*?-->\s*", "", chess_embed, count=1, flags=re.S)
-tarot_embed = open(os.path.join(SRC, "tarot-app/docs/privacy-policy-embed-en.html")).read()
-for name, title, blurb, emb, path in [
-    ("chess-master", "Chess Master", "How the Chess Master app handles your information.", chess_embed, "/privacy/chess-master/"),
-    ("daily-tarot", "Daily Tarot", "How the Daily Tarot app handles your information.", tarot_embed, "/privacy/daily-tarot/"),
-]:
-    html = head(f"Privacy Policy - {title}", blurb, path) + f'''
-<div class="page-hero"><div class="wrap"><span class="eyebrow">Legal &middot; {title}</span><h1>Privacy Policy</h1><p>{blurb} <a href="/privacy/">All policies</a>.</p></div></div>
-<div class="wrap"><div class="embed">{emb}</div></div>
-''' + FOOT
+# ---------------- per-app privacy (parsed from the app repos' embeds, rendered natively) ----------------
+def parse_policy(path, pfx):
+    h = open(path).read()
+    h = re.sub(r"<style>.*?</style>", "", h, flags=re.S)
+    g = lambda rx: re.search(rx, h, re.S)
+    eyebrow = g(rf'<span class="{pfx}-eyebrow">(.*?)</span>').group(1).strip()
+    blurb = g(rf'<header class="{pfx}-hero">.*?<p>(.*?)</p>').group(1).strip()
+    chips = re.findall(rf'<span class="{pfx}-chip">(.*?)</span>', h, re.S)
+    cards = re.findall(rf'<div class="{pfx}-card"><div class="ico">(.*?)</div><b>(.*?)</b><span>(.*?)</span></div>', h, re.S)
+    intro = g(r'</nav>\s*(.*?)\s*<section').group(1).strip()
+    secs = re.findall(rf'<section class="{pfx}-sec" id="{pfx}-(\d+)">\s*<h2><span class="{pfx}-num">\d+</span>(.*?)</h2>(.*?)</section>', h, re.S)
+    foot = g(rf'<p class="{pfx}-foot">(.*?)</p>').group(1).strip()
+    def clean(b):
+        b = b.replace(f'class="{pfx}-path"', 'class="pol-path"').replace(f'class="{pfx}-note"', 'class="pol-note"')
+        return b.strip()
+    return dict(eyebrow=eyebrow, blurb=blurb, chips=chips, cards=cards, intro=intro,
+                secs=[(n, t.strip(), clean(b)) for n, t, b in secs], foot=foot)
+
+SCROLLSPY = """<script>
+(function(){var links=[].slice.call(document.querySelectorAll('.pol-nav a[data-s]'));var secs=links.map(function(a){return document.getElementById(a.dataset.s)});
+function act(){var y=window.scrollY+140,cur=secs[0];secs.forEach(function(s){if(s&&s.offsetTop<=y)cur=s});links.forEach(function(a){a.classList.toggle('on',a.dataset.s===cur.id)})}
+window.addEventListener('scroll',act,{passive:true});act()})();
+</script>"""
+
+apps = [
+    ("chess-master", "Chess Master", "chess-master.png", "var(--gold)", "&#9822;",
+     os.path.join(SRC, "game_chess/docs/privacy-policy-embed-en.html"), "cm", "/privacy/chess-master/"),
+    ("daily-tarot", "Daily Tarot", "daily-tarot.png", "#c4b5fd", "&#10022;",
+     os.path.join(SRC, "tarot-app/docs/privacy-policy-embed-en.html"), "dt", "/privacy/daily-tarot/"),
+]
+for name, title, icon, accent, mark, path, pfx, url in apps:
+    d = parse_policy(path, pfx)
+    toc = "".join(f'<li><a href="#s{n}" data-s="s{n}"><i>{n}</i><span>{t}</span></a></li>' for n, t, _ in d["secs"])
+    body = "".join(f'<section class="pol-sec" id="s{n}"><div class="pol-num">{n.zfill(2)}</div><h2>{t}</h2>{b}</section>' for n, t, b in d["secs"])
+    cards = "".join(f'<div class="pol-card rv"><div class="ico">{i}</div><b>{t}</b><span>{s_}</span></div>' for i, t, s_ in d["cards"])
+    chips = "".join(f'<span class="pol-chip">{c}</span>' for c in d["chips"])
+    intro = d["intro"].replace("<p>", "").replace("</p>", "")
+    html = head(f"Privacy Policy - {title}", f"How the {title} app handles your information.", url) + f"""
+<div class="page-hero pol-hero" style="--accent:{accent}">
+<div class="wrap">
+<div class="pol-hero-grid">
+<div>
+<span class="eyebrow">Legal &middot; {d["eyebrow"]}</span>
+<h1>Privacy <span class="grad">Policy</span></h1>
+<p>{d["blurb"]}</p>
+<div class="pol-chips">{chips}</div>
+</div>
+<div class="pol-hero-icon"><img src="/assets/{icon}" alt="{title} icon" width="128" height="128"><span class="mark">{mark}</span></div>
+</div>
+</div>
+</div>
+<div class="wrap">
+<div class="pol-summary">{cards}</div>
+<div class="pol-layout">
+<aside class="pol-nav">
+<div class="pol-nav-inner">
+<strong>Contents</strong>
+<ol>{toc}</ol>
+<a class="pol-all" href="/privacy/">&larr; All policies</a>
+</div>
+</aside>
+<article class="pol-body">
+<p class="pol-intro">{intro}</p>
+{body}
+<div class="pol-contact">
+<div><h3>Questions about your privacy?</h3><p>We usually reply within a few days.</p></div>
+<a class="btn" href="mailto:{MAIL}">{MAIL}</a>
+</div>
+<p class="pol-foot">{d["foot"]}</p>
+</article>
+</div>
+</div>
+{SCROLLSPY}
+""" + FOOT
     write(f"privacy/{name}/index.html", html)
 
 print("ok")
