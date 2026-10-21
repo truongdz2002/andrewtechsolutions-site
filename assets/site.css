@@ -205,9 +205,23 @@ section{padding:96px 0}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{margin:0 0 18px;color:var(--ink-2);font-size:15px}
 
-/* embedded policies */
-.embed{background:#fff;color:#18202e;border-radius:28px;padding:30px;box-shadow:0 40px 100px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08)}
-@media (max-width:560px){.embed{padding:14px;border-radius:20px}}
+/* embedded policies: re-theme the per-app policy fragments to the site's dark look */
+.embed{position:relative;border-radius:28px;padding:34px;background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 40px 100px -40px rgba(0,0,0,.9)}
+.embed .cm-pp,.embed .dt-pp{--ink:#e9edf6;--muted:#9aa5bd;--line:rgba(255,255,255,.1);--soft:rgba(255,255,255,.045);
+  --gold:#f1c40f;--gold-soft:rgba(241,196,15,.1);--gold-line:rgba(241,196,15,.3);background:transparent;max-width:none;font-family:var(--sans)}
+.embed .dt-pp{--gold:#f6d98e;--gold-soft:rgba(246,217,142,.1)}
+.embed .cm-pp a,.embed .dt-pp a{color:var(--link)}
+.embed .cm-hero,.embed .dt-hero{border:1px solid var(--panel-line);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.embed .cm-hero h1,.embed .dt-hero h1,.embed .cm-sec h2,.embed .dt-sec h2,.embed .cm-contact h3,.embed .dt-contact h3{font-family:var(--display);letter-spacing:-.02em}
+.embed .cm-card,.embed .dt-card,.embed .cm-toc,.embed .dt-toc{background:var(--soft);border-color:var(--line);backdrop-filter:blur(6px)}
+.embed .cm-card b,.embed .dt-card b,.embed .cm-toc a,.embed .dt-toc a{color:var(--ink)}
+.embed .cm-num,.embed .dt-num{background:var(--gold-soft);border-color:var(--gold-line);color:var(--gold)}
+.embed .dt-num{border-color:rgba(246,217,142,.3)}
+.embed .cm-path,.embed .dt-path{background:var(--soft);border-color:var(--line);font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.embed .cm-note,.embed .dt-note{background:var(--gold-soft);border-left-color:var(--gold)}
+.embed .cm-contact,.embed .dt-contact{border:1px solid var(--panel-line)}
+.embed .cm-foot,.embed .dt-foot{color:var(--muted)}
+@media (max-width:560px){.embed{padding:16px;border-radius:20px}}
 
 /* footer */
 footer.site{border-top:1px solid var(--line);padding:56px 0 32px;margin-top:40px;background:linear-gradient(180deg,transparent,rgba(124,58,237,.06))}
