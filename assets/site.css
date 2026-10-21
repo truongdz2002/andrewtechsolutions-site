@@ -328,3 +328,4 @@ header.site nav a.btn:hover{background:linear-gradient(90deg,var(--c1),#5eead4)}
 .flang a{color:var(--muted)}
 .flang a.cur{color:#fff}
 @media (max-width:720px){header.site nav .lang{display:block}header.site nav a{display:none}header.site nav a.btn{display:none}}
+.games span small{font-size:11px;color:var(--muted);margin-left:4px;font-style:italic}

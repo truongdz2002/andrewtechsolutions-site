@@ -132,7 +132,7 @@ BOARD = "".join(cells)
 
 def build_index(lang, prefix, t):
     h, a, c, ta, w, b = t["hero"], t["apps"], t["chess"], t["tarot"], t["why"], t["band"]
-    marquee = "".join(f"<li>{g}</li>" for g in GAMES + t["marquee"])
+    marquee = "".join(f"<li>{re.sub(r'\s*<small>.*?</small>', '', g)}</li>" for g in t["games"] + t["marquee"])
     feats = lambda fs: "".join(f'<li>{CHECK}<span><b>{x}</b> {y}</span></li>' for x, y in fs)
     icons = [
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v5c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V7l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>',
@@ -173,7 +173,7 @@ def build_index(lang, prefix, t):
 <span class="tag">{c["tag"]}</span>
 <h2>{c["name"]}</h2>
 <p>{c["p"]}</p>
-<div class="games">{"".join(f"<span>{g}</span>" for g in GAMES)}</div>
+<div class="games">{"".join(f"<span>{g}</span>" for g in t["games"])}</div>
 <ul class="feat">{feats(c["f"])}</ul>
 <div class="cta"><a class="btn" href="{PLAY_CHESS}">{ICON_PLAY}{t["play"]}</a><a class="btn ghost soon" href="#">{ICON_APPLE}{t["appstore"]}</a><span class="meta">{c["meta"]}</span></div>
 <p style="margin:14px 0 0;font-size:14px"><a href="/privacy/chess-master/">{c["plink"]}</a></p>

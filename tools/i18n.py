@@ -13,6 +13,7 @@ LANGS = [
 T = {}
 
 T["en"] = dict(
+    games=['Chess', 'Chess960', 'Xiangqi', 'Hidden Xiangqi', 'Go', 'Shogi', 'Janggi', 'Gomoku', 'Othello', 'Checkers', 'Connect Four', 'Mandarin Square Capturing <small>Ô Ăn Quan</small>', 'Carrying Chess <small>Cờ Gánh</small>', 'Ludo'],
     site_desc="Mobile apps by Andrew Tech Solutions: Chess Master, 14 classic board games in one app, and Daily Tarot, a calm daily tarot companion.",
     nav=dict(apps="Apps", why="Why us", support="Support", privacy="Privacy", terms="Terms", get="Get the apps"),
     hero=dict(eyebrow="Mobile apps &middot; Android &amp; iOS", h1a="Simple, well-made ", h1b="mobile apps.",
@@ -26,7 +27,7 @@ T["en"] = dict(
                p="Fourteen classic board games from around the world in one beautiful app. Play a friend on the same phone or tablet, or challenge the computer at four levels, entirely offline.",
                f=[("Smart AI opponents.", "Easy, Normal, Hard and a Master level for a real challenge."),
                   ("Pass and play.", "Two players on one device, with undo, hints and move history."),
-                  ("Vietnamese folk games.", "Ô Ăn Quan and Cờ Gánh, faithfully recreated.")],
+                  ("Vietnamese folk games.", "Mandarin Square Capturing (Ô Ăn Quan), a Vietnamese mancala, and Carrying Chess (Cờ Gánh), where you capture by flanking and surrounding.")],
                meta="Free &middot; Premium removes ads", plink="Privacy policy for Chess Master"),
     tarot=dict(tag="Lifestyle &middot; Reflection", name="Daily Tarot: Card Reading",
                p="A calm, beautiful companion for reflection. Reveal one card each morning, ask a question with a spread, and learn what every one of the 78 cards means.",
@@ -86,6 +87,7 @@ T["en"] = dict(
 )
 
 T["vi"] = dict(
+    games=['Cờ Vua', 'Cờ Vua 960', 'Cờ Tướng', 'Cờ Úp', 'Cờ Vây', 'Cờ Shogi', 'Cờ Tướng Hàn', 'Cờ Caro', 'Cờ Lật', 'Cờ Đam', 'Thả 4 Quân', 'Ô Ăn Quan', 'Cờ Gánh', 'Cờ Cá Ngựa'],
     site_desc="Ứng dụng di động của Andrew Tech Solutions: Chess Master với 14 trò cờ kinh điển trong một app, và Daily Tarot, người bạn tarot mỗi ngày.",
     nav=dict(apps="Ứng dụng", why="Vì sao", support="Hỗ trợ", privacy="Riêng tư", terms="Điều khoản", get="Tải ứng dụng"),
     hero=dict(eyebrow="Ứng dụng di động &middot; Android &amp; iOS", h1a="Ứng dụng di động ", h1b="gọn gàng, chỉn chu.",
@@ -159,6 +161,7 @@ T["vi"] = dict(
 )
 
 T["es"] = dict(
+    games=['Ajedrez', 'Ajedrez 960', 'Ajedrez chino', 'Xiangqi oculto', 'Go', 'Shogi', 'Ajedrez coreano', 'Gomoku', 'Othello', 'Damas', 'Conecta 4', 'Mancala vietnamita <small>Ô Ăn Quan</small>', 'Ajedrez de carga <small>Cờ Gánh</small>', 'Parchís'],
     site_desc="Apps móviles de Andrew Tech Solutions: Chess Master, 14 juegos de mesa clásicos en una app, y Daily Tarot, un compañero de tarot diario.",
     nav=dict(apps="Apps", why="Por qué", support="Soporte", privacy="Privacidad", terms="Términos", get="Descargar apps"),
     hero=dict(eyebrow="Apps móviles &middot; Android y iOS", h1a="Apps móviles ", h1b="simples y bien hechas.",
@@ -172,7 +175,7 @@ T["es"] = dict(
                p="Catorce juegos de mesa clásicos de todo el mundo en una app preciosa. Juega con un amigo en el mismo teléfono o tableta, o reta a la computadora en cuatro niveles, totalmente sin conexión.",
                f=[("IA inteligente.", "Fácil, Normal, Difícil y un nivel Maestro para un reto de verdad."),
                   ("Pasa y juega.", "Dos jugadores en un dispositivo, con deshacer, pistas e historial de jugadas."),
-                  ("Juegos tradicionales vietnamitas.", "Ô Ăn Quan y Cờ Gánh, recreados con fidelidad.")],
+                  ("Juegos tradicionales vietnamitas.", "El mancala vietnamita (Ô Ăn Quan) y el ajedrez de carga (Cờ Gánh), donde se captura flanqueando y rodeando.")],
                meta="Gratis &middot; Premium quita los anuncios", plink="Política de privacidad de Chess Master"),
     tarot=dict(tag="Estilo de vida &middot; Reflexión", name="Daily Tarot: Lectura de Cartas",
                p="Un compañero sereno y bonito para reflexionar. Revela una carta cada mañana, haz una pregunta con una tirada y aprende el significado de las 78 cartas.",
@@ -232,6 +235,7 @@ T["es"] = dict(
 )
 
 T["pt"] = dict(
+    games=['Xadrez', 'Xadrez 960', 'Xadrez chinês', 'Xiangqi oculto', 'Go', 'Shogi', 'Xadrez coreano', 'Gomoku', 'Othello', 'Damas', 'Lig 4', 'Mancala vietnamita <small>Ô Ăn Quan</small>', 'Xadrez de carregar <small>Cờ Gánh</small>', 'Ludo'],
     site_desc="Apps móveis da Andrew Tech Solutions: Chess Master, 14 jogos de tabuleiro clássicos num só app, e Daily Tarot, um companheiro de tarô diário.",
     nav=dict(apps="Apps", why="Por quê", support="Suporte", privacy="Privacidade", terms="Termos", get="Baixar apps"),
     hero=dict(eyebrow="Apps móveis &middot; Android e iOS", h1a="Apps móveis ", h1b="simples e bem feitos.",
@@ -245,7 +249,7 @@ T["pt"] = dict(
                p="Catorze jogos de tabuleiro clássicos do mundo todo em um app lindo. Jogue com um amigo no mesmo celular ou tablet, ou desafie o computador em quatro níveis, totalmente offline.",
                f=[("IA inteligente.", "Fácil, Normal, Difícil e um nível Mestre para um desafio de verdade."),
                   ("Passe e jogue.", "Dois jogadores em um aparelho, com desfazer, dicas e histórico de lances."),
-                  ("Jogos tradicionais vietnamitas.", "Ô Ăn Quan e Cờ Gánh, recriados com fidelidade.")],
+                  ("Jogos tradicionais vietnamitas.", "O mancala vietnamita (Ô Ăn Quan) e o xadrez de carregar (Cờ Gánh), em que se captura cercando e flanqueando.")],
                meta="Grátis &middot; Premium remove anúncios", plink="Política de privacidade do Chess Master"),
     tarot=dict(tag="Estilo de vida &middot; Reflexão", name="Daily Tarot: Leitura de Cartas",
                p="Um companheiro calmo e bonito para refletir. Revele uma carta toda manhã, faça uma pergunta com uma tiragem e aprenda o significado das 78 cartas.",
@@ -305,6 +309,7 @@ T["pt"] = dict(
 )
 
 T["id"] = dict(
+    games=['Catur', 'Catur960', 'Catur Gajah', 'Xiangqi Tertutup', 'Go', 'Shogi', 'Catur Korea', 'Gomoku', 'Othello', 'Dam', 'Connect Four', 'Congklak Vietnam <small>Ô Ăn Quan</small>', 'Catur Pikul <small>Cờ Gánh</small>', 'Ludo'],
     site_desc="Aplikasi seluler dari Andrew Tech Solutions: Chess Master, 14 permainan papan klasik dalam satu aplikasi, dan Daily Tarot, teman tarot harian yang tenang.",
     nav=dict(apps="Aplikasi", why="Mengapa", support="Dukungan", privacy="Privasi", terms="Ketentuan", get="Unduh aplikasi"),
     hero=dict(eyebrow="Aplikasi seluler &middot; Android &amp; iOS", h1a="Aplikasi seluler ", h1b="sederhana dan rapi.",
@@ -318,7 +323,7 @@ T["id"] = dict(
                p="Empat belas permainan papan klasik dari seluruh dunia dalam satu aplikasi yang indah. Main bersama teman di satu ponsel atau tablet, atau lawan komputer di empat tingkat, sepenuhnya offline.",
                f=[("Lawan AI cerdas.", "Mudah, Normal, Sulit, dan tingkat Master untuk tantangan sesungguhnya."),
                   ("Main bergantian.", "Dua pemain di satu perangkat, dengan batalkan langkah, petunjuk, dan riwayat langkah."),
-                  ("Permainan rakyat Vietnam.", "Ô Ăn Quan dan Cờ Gánh, dibuat ulang dengan setia.")],
+                  ("Permainan rakyat Vietnam.", "Congklak Vietnam (Ô Ăn Quan) dan Catur Pikul (Cờ Gánh), menangkap dengan mengapit dan mengepung.")],
                meta="Gratis &middot; Premium menghapus iklan", plink="Kebijakan privasi Chess Master"),
     tarot=dict(tag="Gaya hidup &middot; Refleksi", name="Daily Tarot: Pembacaan Kartu",
                p="Teman yang tenang dan indah untuk merenung. Buka satu kartu setiap pagi, ajukan pertanyaan dengan sebuah tebaran, dan pelajari makna ke-78 kartu.",
@@ -378,6 +383,7 @@ T["id"] = dict(
 )
 
 T["th"] = dict(
+    games=['หมากรุกสากล', 'หมากรุก960', 'หมากรุกจีน', 'หมากรุกจีนคว่ำ', 'โกะ', 'โชงิ', 'หมากรุกเกาหลี', 'โกโมกุ', 'โอเทลโล', 'หมากฮอส', 'เรียงสี่', 'หมากขุมเวียดนาม <small>Ô Ăn Quan</small>', 'หมากหาบ <small>Cờ Gánh</small>', 'ลูโด'],
     site_desc="แอปมือถือจาก Andrew Tech Solutions: Chess Master รวม 14 เกมกระดานคลาสสิกในแอปเดียว และ Daily Tarot เพื่อนไพ่ทาโรต์ประจำวัน",
     nav=dict(apps="แอป", why="ทำไมต้องเรา", support="ช่วยเหลือ", privacy="ความเป็นส่วนตัว", terms="ข้อกำหนด", get="ดาวน์โหลดแอป"),
     hero=dict(eyebrow="แอปมือถือ &middot; Android และ iOS", h1a="แอปมือถือ", h1b="เรียบง่าย ทำมาอย่างดี",
@@ -391,7 +397,7 @@ T["th"] = dict(
                p="เกมกระดานคลาสสิก 14 เกมจากทั่วโลกในแอปเดียวที่สวยงาม เล่นกับเพื่อนบนโทรศัพท์หรือแท็บเล็ตเครื่องเดียว หรือท้าคอมพิวเตอร์ 4 ระดับ ออฟไลน์ทั้งหมด",
                f=[("คู่ต่อสู้ AI ฉลาด", "ง่าย ปกติ ยาก และระดับมาสเตอร์สำหรับความท้าทายจริง"),
                   ("ผลัดกันเล่น", "สองผู้เล่นบนเครื่องเดียว มีย้อนตาเดิน คำใบ้ และประวัติการเดิน"),
-                  ("เกมพื้นบ้านเวียดนาม", "Ô Ăn Quan และ Cờ Gánh สร้างใหม่อย่างซื่อตรง")],
+                  ("เกมพื้นบ้านเวียดนาม", "หมากขุมเวียดนาม (Ô Ăn Quan) และหมากหาบ (Cờ Gánh) ที่กินหมากด้วยการขนาบและล้อม")],
                meta="ฟรี &middot; Premium ลบโฆษณา", plink="นโยบายความเป็นส่วนตัวของ Chess Master"),
     tarot=dict(tag="ไลฟ์สไตล์ &middot; การใคร่ครวญ", name="Daily Tarot: ดูไพ่ทาโรต์",
                p="เพื่อนที่สงบและสวยงามสำหรับการใคร่ครวญ เปิดไพ่หนึ่งใบทุกเช้า ถามคำถามด้วยการวางไพ่ และเรียนรู้ความหมายของไพ่ทั้ง 78 ใบ",
