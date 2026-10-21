@@ -311,3 +311,20 @@ header.site nav a.btn:hover{background:linear-gradient(90deg,var(--c1),#5eead4)}
   .pol-hero-grid{grid-template-columns:1fr}
   .pol-hero-icon{display:none}
 }
+
+/* ---------- language switcher ---------- */
+.lang{position:relative;margin-left:6px}
+.lang button{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--panel-line);color:var(--ink-2);border-radius:999px;padding:7px 12px;font:600 12.5px var(--mono);letter-spacing:.06em;cursor:pointer;transition:border-color .15s,background .15s}
+.lang button svg{width:15px;height:15px}
+.lang button:hover,.lang.open button{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05);color:#fff}
+.lang .menu{position:absolute;right:0;top:calc(100% + 10px);min-width:190px;display:none;flex-direction:column;padding:6px;border-radius:16px;background:rgba(10,14,24,.92);backdrop-filter:blur(16px);border:1px solid var(--panel-line);box-shadow:0 30px 60px -20px rgba(0,0,0,.9);z-index:30}
+.lang.open .menu{display:flex}
+.lang .menu a{color:var(--ink-2);font-size:14px;padding:9px 12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+.lang .menu a:hover{background:rgba(255,255,255,.06);color:#fff;text-decoration:none}
+.lang .menu a.cur{color:#fff;background:linear-gradient(90deg,rgba(34,211,238,.15),rgba(124,58,237,.15))}
+.lang .menu a.cur::after{content:"✓";color:var(--c1);font-size:12px}
+.flang{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:0 0 22px;color:var(--muted);font-size:13.5px}
+.flang span{font:600 11.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;margin-right:6px}
+.flang a{color:var(--muted)}
+.flang a.cur{color:#fff}
+@media (max-width:720px){header.site nav .lang{display:block}header.site nav a{display:none}header.site nav a.btn{display:none}}
