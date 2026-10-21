@@ -14,7 +14,6 @@ Pages: `/` (apps), `/support/`, `/privacy/` (+ one page per app), `/terms/`, `/a
 
 ## Updating privacy policies
 Source of truth stays in each app repo (`game_chess/docs/privacy-policy-embed-en.html`,
-`tarot-app/docs/privacy-policy-embed-en.html`, `translation-app/privacy_policy.html`).
 Re-copy them into `privacy/<app>/index.html` when they change.
 
 `app-ads.txt` must keep both publisher lines (shared with another AdMob account).
