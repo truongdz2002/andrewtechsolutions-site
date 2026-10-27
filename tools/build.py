@@ -272,6 +272,7 @@ def build_privacy(lang, prefix, t):
 <div class="grid4" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:18px 0 14px">
 <a class="tile" href="/privacy/chess-master/" style="text-decoration:none"><img src="/assets/chess-master.png" alt="" width="46" height="46" style="border-radius:12px;margin-bottom:14px"><h3>Chess Master</h3><p>{s["chess_p"]}</p></a>
 <a class="tile" href="/privacy/daily-tarot/" style="text-decoration:none"><img src="/assets/daily-tarot.png" alt="" width="46" height="46" style="border-radius:12px;margin-bottom:14px"><h3>Daily Tarot</h3><p>{s["tarot_p"]}</p></a>
+<a class="tile" href="/privacy/plushie-blocks/" style="text-decoration:none"><img src="/assets/plushie-blocks.png" alt="" width="46" height="46" style="border-radius:12px;margin-bottom:14px"><h3>Plushie Blocks</h3><p>{s["bp_p"]}</p></a>
 </div>
 {note}
 <h2>{s["all_h"]}</h2>
