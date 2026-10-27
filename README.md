@@ -2,7 +2,7 @@
 
 Static site for Andrew Tech Solutions, hosted on GitHub Pages (custom domain via `CNAME`).
 
-Pages: `/` (apps), `/support/`, `/privacy/` (+ `/privacy/chess-master/`, `/privacy/daily-tarot/`), `/terms/`, `/app-ads.txt`.
+Pages: `/` (apps), `/support/`, `/privacy/` (+ `/privacy/chess-master/`, `/privacy/daily-tarot/`, `/privacy/plushie-blocks/`), `/terms/`, `/app-ads.txt`.
 
 Languages: English at `/`, then `/vi/`, `/es/`, `/pt/`, `/id/`, `/th/` for the four shared pages. Per-app privacy policies are English only. All copy lives in `tools/i18n.py`; add a language by adding a tuple to `LANGS` and a dict to `T`.
 
@@ -15,7 +15,8 @@ python3 tools/build.py . /Users/victor/Documents/personal
 ```
 
 The second argument is the folder that contains the app repos; per-app privacy pages are copied from
-`game_chess/docs/privacy-policy-embed-en.html` and `tarot-app/docs/privacy-policy-embed-en.html`.
+`game_chess/docs/privacy-policy-embed-en.html`, `tarot-app/docs/privacy-policy-embed-en.html` and
+`block_puzzle/docs/privacy-policy-embed-en.html`.
 Styles live in `assets/site.css`; screenshots in `assets/shots/` (resized from `tarot-app/store/screenshots-play`).
 
 Preview locally: `python3 -m http.server 8765` then open http://localhost:8765/.

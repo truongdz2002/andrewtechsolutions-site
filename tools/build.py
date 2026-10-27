@@ -310,6 +310,8 @@ APPS = [
      os.path.join(SRC, "game_chess/docs/privacy-policy-embed-en.html"), "cm"),
     ("daily-tarot", "Daily Tarot", "daily-tarot.png", "#c4b5fd", "&#10022;",
      os.path.join(SRC, "tarot-app/docs/privacy-policy-embed-en.html"), "dt"),
+    ("plushie-blocks", "Plushie Blocks", "plushie-blocks.png", "#ffb4e6", "&#9638;",
+     os.path.join(SRC, "block_puzzle/docs/privacy-policy-embed-en.html"), "bp"),
 ]
 
 
